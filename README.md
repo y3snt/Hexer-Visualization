@@ -1,12 +1,12 @@
 <!-- PROJECT LOGO -->
-<br />
 <div align="center">
-  <a href="https://github.com/y3snt/repo_name">
+
+  <a href="https://github.com/y3snt/Hexer-Visualization">
     <img src="images/logo.png" alt="Logo" width="150" height="150">
   </a>
 
-<h3 align="center">Hexer Visualization</h3>
 
+ <h3 align="center">Hexer Visualization</h3>
   <p align="center">
     Visualization of an algorithm that solves XVI Polish Olympiad in Informatics (Stage III) problem - Hexer
     <br />
@@ -50,7 +50,7 @@ I found this problem so interesting, that I've decided to create animation that 
 
 ### Built With
 
-[![Python]][Next-url] 
+[![Python]][Python-url] 
 #### v3.8.10
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -134,3 +134,4 @@ Magdalena Doleśniak - magda.dolesniak@gmail.com
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
+[Python-url]: https://www.python.org/
