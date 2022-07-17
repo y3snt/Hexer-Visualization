@@ -45,13 +45,10 @@
 
 I found this problem so interesting, that I've decided to create animation that visualizes solution to the problem. I thinks it helps to understand the algorithm better by showing the path, not for just visited nodes, but for visited nodes with states (swords collected by Hexer at the moment of entering the node).
 
-<h3 align="right"><a href="#top">⇧</a></h3>
-
-
 ### Built With
 
 [![Python]][Python-url] 
-#### v3.8.10
+#### `v3.8.10`
 
 <h3 align="right"><a href="#top">⇧</a></h3>
 
@@ -76,7 +73,7 @@ $ pip install networkx[default]
 ![Graph Description][description]
 
 ### How to run the program
-There is a script named run.py inside the project folder. Change working directory in terminal to this folder and type:
+There is a script named `run.py` inside the project folder. Change working directory in terminal to this folder and type:
 
 ```sh
 $ python3 run.py
@@ -84,9 +81,9 @@ $ python3 run.py
 The window with animation will appear (full screen) and 5 seconds after the animation ends, the window will close.
 
 ### Configuration
-Graphics and animation settings can be changed in the config folder. (animation - config.json, graphics - colors.json, sizes.json)
+Graphics and animation settings can be changed in the `config` folder. (animation - `config.json`, graphics - `colors.json`, `sizes.json`)
 <br />
-Input (initial graph) can be changed in input.txt in data folder.
+Input (initial graph) can be changed in `input.txt` in `data` folder.
 
 <h3 align="right"><a href="#top">⇧</a></h3>
 
@@ -106,7 +103,7 @@ Additionally when node is processed it gets marked as processed, so it will be p
 
 When distance to n-th node is found or the queue is empty the algorithm stops.
 
-##### My implementation of this algorithm can be found in c++ or python version in the algorithms folder.
+##### My implementation of this algorithm can be found in c++ or python version in the `algorithms` folder.
 
 #### More information (PL): https://oi.edu.pl/static/attachment/20110704/oi16.pdf (page 133)
 
@@ -128,17 +125,17 @@ When distance to n-th node is found or the queue is empty the algorithm stops.
 ## Contact
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
-<br />
+
 Magdalena Doleśniak
 <br />
-magda.dolesniak@gmail.com 
+magda.dolesniak@gmail.com
 
 <h3 align="right"><a href="#top">⇧</a></h3>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/magdalena-dole%C5%9Bniak/
 [screenshot]: images/screenshot.png
 [description]: images/graph_description.png
