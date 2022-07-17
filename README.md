@@ -1,3 +1,5 @@
+<div id="top"></div>
+
 <!-- PROJECT LOGO -->
 <div align="center">
 
@@ -43,7 +45,7 @@
 
 I found this problem so interesting, that I've decided to create animation that visualizes solution to the problem. I thinks it helps to understand the algorithm better by showing the path, not for just visited nodes, but for visited nodes with states (swords collected by Hexer at the moment of entering the node).
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<h3 align="right"><a href="#top">⇧</a></h3>
 
 
 ### Built With
@@ -51,7 +53,7 @@ I found this problem so interesting, that I've decided to create animation that 
 [![Python]][Python-url] 
 #### v3.8.10
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<h3 align="right"><a href="#top">⇧</a></h3>
 
 
 ## Required Modules 
@@ -66,7 +68,7 @@ $ pip install matplotlib
 $ pip install networkx[default]
 ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<h3 align="right"><a href="#top">⇧</a></h3>
 
 
 ## Project Description
@@ -86,7 +88,7 @@ Graphics and animation settings can be changed in the config folder. (animation 
 <br />
 Input (initial graph) can be changed in input.txt in data folder.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<h3 align="right"><a href="#top">⇧</a></h3>
 
 
 ## Algorithm - Short Description
@@ -108,7 +110,7 @@ When distance to n-th node is found or the queue is empty the algorithm stops.
 
 #### More information (PL): https://oi.edu.pl/static/attachment/20110704/oi16.pdf (page 133)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<h3 align="right"><a href="#top">⇧</a></h3>
 
 
 ## Future Updates
@@ -120,22 +122,24 @@ When distance to n-th node is found or the queue is empty the algorithm stops.
 
 ##### I will come back to this project later, because currently I'm working on another project.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<h3 align="right"><a href="#top">⇧</a></h3>
 
 <!-- CONTACT -->
 ## Contact
 
-Magdalena Doleśniak - magda.dolesniak@gmail.com
+[![LinkedIn][linkedin-shield]][linkedin-url]
+<br />
+Magdalena Doleśniak
+<br />
+magda.dolesniak@gmail.com 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<h3 align="right"><a href="#top">⇧</a></h3>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://www.linkedin.com/in/magdalena-dole%C5%9Bniak/
 [screenshot]: images/screenshot.png
 [description]: images/graph_description.png
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
