@@ -11,9 +11,9 @@
     Visualization of an algorithm that solves XVI Polish Olympiad in Informatics (Stage III) problem - Hexer
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/y3snt/Hexer-Visualization/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/y3snt/rHexer-Visualization/issues">Request Feature</a>
   </p>
 </div>
 
