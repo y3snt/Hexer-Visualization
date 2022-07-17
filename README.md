@@ -29,23 +29,21 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#required-modules">Required Modules</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#project-description">Project Description</a></li>
+    <li><a href="#algorithm---short-description">Algorithm - Short Description</a></li>
+    <li><a href="#future-updates">Future Updates</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
 
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Screen Shot][screenshot]
 
 I found this problem so interesting, that I've decided to create animation that visualizes solution to the problem. I thinks it helps to understand the algorithm better by showing the path, not for just visited nodes, but for visited nodes with states (swords collected by Hexer at the moment of entering the node).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 ### Built With
@@ -71,20 +69,29 @@ $ pip install networkx[default]
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+## Project Description
 
-<!-- USAGE EXAMPLES -->
-## Usage
+![Graph Description][description]
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### How to run the program
+There is a script named run.py inside the project folder. Change working directory in terminal to this folder and type:
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
+$ python3 run.py
+```
+The window with animation will appear (full screen) and 5 seconds after the animation ends, the window will close.
+
+### Configuration
+Graphics and animation settings can be changed in the config folder. (animation - config.json, graphics - colors.json, sizes.json)
+<br />
+Input (initial graph) can be changed in input.txt in data folder.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- ALGORITHM DESCRIPTION -->
-## Algorithm
 
-#### TL;DR Dijkstra + Bitmasks
+## Algorithm - Short Description
+
+#### TL;DR Dijkstra + bit masks
 
 The algorithm that solves the problem is modified Dijkstra. Instead of simply counting distances to every node from starting node (node 1 in this case) it counts distance to every node for every possible subset of swords that can be collected by Hexer. This sword subsets are stored in bit masks.
 
@@ -97,24 +104,21 @@ Additionally when node is processed it gets marked as processed, so it will be p
 
 When distance to n-th node is found or the queue is empty the algorithm stops.
 
-##### This algorithm can be found in c++ or python version in the algorithms folder.
+##### My implementation of this algorithm can be found in c++ or python version in the algorithms folder.
 
-#### More information:
+#### More information (PL): https://oi.edu.pl/static/attachment/20110704/oi16.pdf (page 133)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+## Future Updates
 
+- [ ] Random graph generator
+- [ ] Show initial graph (with animation)
+- [ ] Adjust node size and font size besed on number of nodes
+- [ ] Visualize discarded nodes (with on/off option in config)
 
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+##### I will come back to this project later, because currently I'm working on another project.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -132,6 +136,7 @@ Magdalena Doleśniak - magda.dolesniak@gmail.com
 [issues-url]: https://github.com/github_username/repo_name/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[screenshot]: images/screenshot.png
+[description]: images/graph_description.png
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
