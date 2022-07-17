@@ -15,7 +15,7 @@
     <br />
     <a href="https://github.com/y3snt/Hexer-Visualization/issues">Report Bug</a>
     ·
-    <a href="https://github.com/y3snt/rHexer-Visualization/issues">Request Feature</a>
+    <a href="https://github.com/y3snt/Hexer-Visualization/issues">Request Feature</a>
   </p>
 </div>
 
