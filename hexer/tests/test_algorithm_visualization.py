@@ -5,7 +5,7 @@ from os.path import isfile, join, dirname
 from contextlib import redirect_stdout
 from re import findall
 
-from hexer.algorithms.algorithm_visualization import algorithm, initialize, reset_visualization_values
+from hexer.algorithms.algorithm_visualization import algorithm, initialize
 from hexer.data import Data
 
 dir_path = dirname(__file__)
@@ -33,8 +33,6 @@ def test_algorithm(input_path, output_path):
         expected = f.read()[:-1]
 
     assert result == expected
-
-    reset_visualization_values()
 
 
 

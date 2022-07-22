@@ -2,14 +2,17 @@ from queue import PriorityQueue
 from math import inf
 from collections import namedtuple
 
+from events import Event
+
 # visualization purposes
 Node = namedtuple('Node', 'num, prev_num, collected_swords') 
 Edge = namedtuple('Edge', 'node, prev_node, weight, monsters')
-Step = namedtuple('Step', 'edge, distance, state')
 
-nodes = set() # needed for graph initialization
-edges = set() # needed for graph initialization
-steps = [] # animation is based on steps
+processing_node = Event()
+to_be_processed_node = Event()
+processed_node = Event()
+new_node = Event()
+new_edge = Event()
 
 def initialize(data):
     global n, m, p, k, K, G
@@ -23,13 +26,6 @@ def reset_algorithm_values():
     processed = [ [False for j in range(1 << (p + 1))] for i in range(n + 1)] # true if i-th node with k-th state (subset of swords) was processed
     dist = [ [inf for j in range(1 << (p + 1))] for i in range(n + 1)] # distance to every town for every subset of swords (from town 1)
     q = PriorityQueue() # (distance, edge); (edge is used for visualization purposes)
-
-def reset_visualization_values():
-    global nodes, edges, steps
-
-    nodes = set() 
-    edges = set()
-    steps = []
 
 def win(mask, cost):
     '''Determine if we can cross the road to the next town.'''
@@ -47,7 +43,7 @@ def algorithm():
     start_node = Node(1, 1, bit_mask)
     q.put((0, Edge(start_node, start_node, 0, 0)))
 
-    nodes.add(start_node)
+    new_node(start_node)
 
     # Dijkstra
     while not q.empty():
@@ -58,7 +54,7 @@ def algorithm():
         if processed[v][current_mask]: continue
 
         processed[v][current_mask] = True
-        steps.append(Step(current_edge, d, 1)) # processing
+        processing_node(current_edge, d, 1)
 
         if v == n:
             print(f'Found!\nThe shortest distance to node {v} is {d}.')
@@ -74,16 +70,11 @@ def algorithm():
                 if  next_dist < dist[u][next_mask]:
                     next_node = Node(u, v, next_mask)
                     next_edge = Edge(next_node, current_node, w, monsters)
-                    nodes.add(next_node)
-                    edges.add(next_edge)
-                    steps.append(Step(next_edge, next_dist, 2)) # to be processed
+                    new_node(next_node)
+                    new_edge(next_edge)
+                    to_be_processed_node(next_edge, next_dist, 2)
 
                     dist[u][next_mask] = next_dist
                     q.put((next_dist, next_edge))
         
-        steps.append(Step(current_edge, d, 3)) # processed
-
-def step():
-    '''Return next step of the algorithm.'''
-    for s in steps:
-        yield s
+        processed_node(current_edge, d, 3)

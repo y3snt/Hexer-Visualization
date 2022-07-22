@@ -11,15 +11,31 @@ class Graph:
         self.edge_labels = {} 
         self.lower_node_labels = {} 
         self.upper_node_labels = {} 
+        
+        self.seed = layout_seed
 
         self.graph = nx.Graph()
-        self.graph.add_nodes_from((u, v, mask) for u, v, mask in nodes)
-        self.graph.add_edges_from((U, V) for U, V, t, b in edges)
-
+        
         self.node_sizes, self.edge_sizes, self.labels_sizes, self.border_sizes = node_sizes, edge_sizes, labels_sizes, border_sizes
         self.node_colors, self.edge_colors, self.labels_colors =  node_colors, edge_colors, labels_colors
 
-        self.pos = nx.spring_layout(self.graph, seed=layout_seed)
+        self.add_nodes(nodes)
+        self.add_edges(edges)
+
+        self._update_graph()
+        
+    def add_nodes(self, nodes):
+        if nodes:
+            self.graph.add_nodes_from((u, v, mask) for u, v, mask in nodes)
+            self._update_graph()
+
+    def add_edges(self, edges):
+        if edges:
+            self.graph.add_edges_from((U, V) for U, V, t, b in edges)
+            self._update_graph()
+
+    def _update_graph(self):
+        self.pos = nx.spring_layout(self.graph, seed=self.seed)
 
         # change node labels positions
         self.upper_node_labels_pos = deepcopy(self.pos)
@@ -29,10 +45,8 @@ class Graph:
             self.upper_node_labels_pos[i][1] += 0.039
             self.lower_node_labels_pos[i][1] -= 0.037
             
-
         self._init_node_attributes()
         self._init_edge_attributes()
-        
 
     def draw_graph(self):
         nx.draw(self.graph, self.pos, node_color=list(nx.get_node_attributes(self.graph, 'color').values()), edge_color=self.edge_colors[0])
