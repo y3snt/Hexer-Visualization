@@ -73,7 +73,7 @@ $ pip install networkx[default]
 ![Graph Description][description]
 
 ### How to run the program
-There is a script named `run.py` inside the project folder. Change working directory in terminal to this folder and type:
+There is a script named `run.py` inside the `hexer` folder. Change working directory in terminal to this folder and type:
 
 ```sh
 $ python3 run.py
