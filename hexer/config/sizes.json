@@ -1,0 +1,27 @@
+{
+    "nodes":
+        {
+            "default":1000,
+            "currently processing":2800,
+            "to be processed":1000,
+            "processed":2000
+        },
+    "edges":
+        {
+            "default":4
+        },
+    "labels":
+        {
+            "node label":13,
+            "upper node label":14,
+            "lower node label":14,
+            "edge label":11
+        },
+    "borders":
+        {
+            "default":0,
+            "currently processing":10,
+            "to be processed":0,
+            "processed":0
+        }
+}

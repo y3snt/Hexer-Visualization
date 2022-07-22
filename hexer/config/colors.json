@@ -1,0 +1,23 @@
+{
+    "nodes":
+        {
+            "default":"white",
+            "currently processing":"#00FFEA",
+            "to be processed":"#D8FFFC",
+            "processed":"#009D90"
+        },
+    "edges":
+        {
+            "default":"white",
+            "currently processing":"#00DBC9",
+            "to be processed":"#D9FBF8",
+            "processed":"#00534C"
+        },
+    "labels":
+        {
+            "node label":"#00423C",
+            "upper node label":"#00423C",
+            "lower node label":"#00EAD6",
+            "edge label":"#00423C"
+        }
+}

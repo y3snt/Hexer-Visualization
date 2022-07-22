@@ -1,0 +1,3 @@
+input and output source:
+    https://oi.edu.pl/l/16oi_ksiazeczka/
+        ... XVI OI testy i rozwiązania - zad. WIE (III etap) (225.9 KB)
