@@ -5,7 +5,7 @@ from os.path import isfile, join, dirname
 from contextlib import redirect_stdout
 from re import findall
 
-from hexer.algorithms.algorithm_visualization import algorithm, initialize
+from hexer.algorithms.algorithm_visualization import Algorithm
 from hexer.data import Data
 
 dir_path = dirname(__file__)
@@ -21,13 +21,13 @@ def test_algorithm(input_path, output_path):
     with open(input_path) as f:
         data.read_data(f)
     
-    initialize(data)
+    algorithm = Algorithm(*data)
     with io.StringIO() as buffer:
         with redirect_stdout(buffer):
-            algorithm()
+            algorithm.run()
 
         buffer_val = buffer.getvalue()
-        result = findall('[0-9]+', buffer_val)[1] if  buffer_val else '-1'
+        result = findall('[0-9]+', buffer_val)[1] if buffer_val else '-1'
 
     with open(output_path) as f:
         expected = f.read()[:-1]

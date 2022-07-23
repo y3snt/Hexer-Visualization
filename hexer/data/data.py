@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field, astuple
+from typing import List, Tuple
 
 @dataclass
 class Data:
@@ -7,8 +8,8 @@ class Data:
     p: int = field(init=False) # number of different kinds of monsters
     k: int = field(init=False) # number of blacksmiths
 
-    K: list = field(init=False, default_factory=list) # list of bit masks, that represents swords that can be obtained in every town
-    G: list = field(init=False, default_factory=list) # weighted graph that represents towns and monsters on the roads
+    K: List[int] = field(init=False, default_factory=list) # list of bit masks, that represents swords that can be obtained in every town
+    G: List[List[Tuple[int, int, int]]]  = field(init=False, default_factory=list) # weighted graph that represents towns and monsters on the roads
     
     def read_data(self, file):
         try:

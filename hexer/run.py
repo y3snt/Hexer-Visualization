@@ -2,7 +2,7 @@ import json
 
 from visualization import Graph
 from visualization import GraphAnimation
-from algorithms.algorithm_visualization import algorithm, initialize, processing_node, to_be_processed_node, processed_node, new_edge, new_node
+from algorithms.algorithm_visualization import Algorithm
 from data import Data
 
 def add_node(node):
@@ -33,18 +33,18 @@ if __name__ == '__main__':
     with open('data/input.txt') as f:
         data.read_data(f)
 
-    initialize(data)
+    algorithm = Algorithm(*data)
     nodes = set() # needed for graph initialization
     edges = set() # needed for graph initialization
     graph = Graph(nodes, edges, config['seed'], 
         node_sizes, edge_sizes, labels_sizes, border_sizes, 
         node_colors, edge_colors, labels_colors)
 
-    animation = GraphAnimation(graph, [processing_node, to_be_processed_node, processed_node])
+    animation = GraphAnimation(graph, algorithm.events[:3])
 
-    new_node += add_node
-    new_edge += add_edge
-    algorithm()
+    algorithm.new_node += add_node
+    algorithm.new_edge += add_edge
+    algorithm.run()
 
     graph.add_nodes(nodes)
     graph.add_edges(edges)
