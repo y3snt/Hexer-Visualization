@@ -82,7 +82,7 @@ class Algorithm():
             if self.processed[current_node_num][current_mask]: continue
 
             self.processed[current_node_num][current_mask] = True
-            self.processing_node(current_edge, current_dist, 1)
+            self.processing_node(current_edge, current_dist)
 
             if current_node_num == self.n:
                 print(f'Found!\nThe shortest distance to node {current_node_num} is {current_dist}.')
@@ -100,9 +100,9 @@ class Algorithm():
                         next_edge = Edge(next_node, current_node, weight, monsters)
                         self.new_node(next_node)
                         self.new_edge(next_edge)
-                        self.to_be_processed_node(next_edge, next_dist, 2)
+                        self.to_be_processed_node(next_edge, next_dist)
 
                         self.dist[next_node_num][next_mask] = next_dist
                         self.q.put((next_dist, next_edge))
             
-            self.processed_node(current_edge, current_dist, 3)
+            self.processed_node(current_edge, current_dist)
