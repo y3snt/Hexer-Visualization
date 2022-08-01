@@ -4,8 +4,6 @@ from threading import Timer
 from collections import namedtuple
 from enum import Enum
 
-from utils.bitmasks import bit_mask_to_list
-
 class State(Enum):
     '''Edges states.'''
 
@@ -25,11 +23,11 @@ class GraphAnimation:
         for i, event in enumerate(step_events):
             event += self._step_funcs[i] # function corresponding to the event
 
-    def visualize(self, fps, interval, close_seconds, bit_masks, bit_mask_len):
+    def visualize(self, fps, interval, close_seconds, second_label_func=lambda x: x, upper_label_func=lambda x: x, edge_sub_label_func=lambda x: x):
         step_gen = self._step()
         def _animate(i):
             self.fig.clear()
-            self.graph.draw_graph()
+            self.graph.draw()
             try:
                 current_edge, current_dist, state = next(step_gen)
             except StopIteration:
@@ -38,8 +36,8 @@ class GraphAnimation:
                 t.start()
             else:
                 current_node = current_edge.node
-                self.graph.update_node(current_node, bit_mask_to_list(bit_masks[current_node.num], bit_mask_len), bit_mask_to_list(current_node.collected_swords, bit_mask_len), current_dist, state.value)
-                self.graph.update_edge(current_edge, bit_mask_to_list(current_edge.monsters, bit_mask_len), state.value)
+                self.graph.update_node(current_node, second_label_func(current_node.num), upper_label_func(current_node.collected_swords), current_dist, state.value)
+                self.graph.update_edge(current_edge, edge_sub_label_func(current_edge.monsters), state.value)
 
         manager = plt.get_current_fig_manager()
         manager.full_screen_toggle()

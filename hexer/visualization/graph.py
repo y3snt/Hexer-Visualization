@@ -48,7 +48,7 @@ class Graph:
         self._init_node_attributes()
         self._init_edge_attributes()
 
-    def draw_graph(self):
+    def draw(self):
         nx.draw(self.graph, self.pos, node_color=list(nx.get_node_attributes(self.graph, 'color').values()), edge_color=self.edge_colors[0])
         nx.draw_networkx_nodes(self.graph, self.pos, linewidths=list(nx.get_node_attributes(self.graph, 'border size').values()), edgecolors=self.node_colors[2], node_size=list(nx.get_node_attributes(self.graph, 'size').values()), node_color=list(nx.get_node_attributes(self.graph, 'color').values()))
         nx.draw_networkx_edges(self.graph, self.pos, style=list(nx.get_edge_attributes(self.graph, 'style').values()), width=self.edge_sizes[0], edge_color=list(nx.get_edge_attributes(self.graph, 'color').values()))
@@ -56,6 +56,7 @@ class Graph:
         nx.draw_networkx_labels(self.graph, self.pos, labels=self.node_labels, font_color=self.labels_colors['node label'], font_size=self.labels_sizes['node label'])
         nx.draw_networkx_labels(self.graph, self.lower_node_labels_pos, labels=self.lower_node_labels, font_color=self.labels_colors['lower node label'], font_size=self.labels_sizes['lower node label'])
         nx.draw_networkx_labels(self.graph, self.upper_node_labels_pos, labels=self.upper_node_labels, font_color=self.labels_colors['upper node label'], font_size=self.labels_sizes['upper node label'])
+
 
     def update_node(self, node, second_label, upper_label, dist, state):
         self._update_node_attributes(node, state)
