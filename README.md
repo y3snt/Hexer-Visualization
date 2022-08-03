@@ -73,6 +73,11 @@ $ pip install networkx[default]
 ![Graph Description][description]
 
 ### How to run the program
+After cloning the project, navigate to Hexer-Visualization folder in terminal and type:
+```sh
+$ pip install .
+```
+
 There is a script named `run.py` inside the `hexer` folder. Change working directory in terminal to this folder and type:
 
 ```sh

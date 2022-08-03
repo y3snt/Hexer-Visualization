@@ -4,7 +4,7 @@ from queue import PriorityQueue
 from math import inf
 from collections import namedtuple
 
-from events import Event
+from hexer.events import Event
 
 # visualization purposes
 Node = namedtuple('Node', 'num, prev_num, collected_swords') 

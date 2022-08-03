@@ -3,7 +3,7 @@ from copy import deepcopy
 
 from visualization import Graph
 from visualization import GraphAnimation
-from algorithms.algorithm_visualization import Algorithm
+from algorithms import Algorithm
 from data import Data
 from utils.bitmasks import bit_mask_to_list
 
